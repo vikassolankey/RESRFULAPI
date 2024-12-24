@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 28px;
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        .post-info h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .post-info span {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .edit-form {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .form-label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #4a90e2;
+        }
+
+        .textarea {
+            width: 100%;
+            font-size: 14px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: none;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 4px #4a90e2;
+        }
+
+        .submit-button {
+            background-color: #4a90e2;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #357ab8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Edit Post</h1>
+        <div class="post-info">
+            <h2>ID: <span>
+                    <%= post.id %>
+                </span></h2>
+            <h2>Username: <span>@<%= post.username %></span></h2>
+        </div>
+        <form class="edit-form" method="post" action="/posts/<%= post.id %>?_method=PATCH">
+            <label for="content" class="form-label">Content</label>
+            <textarea id="content" rows="10" name="content" class="textarea"><%= post.content %></textarea>
+            <br>
+            <button class="submit-button">Update Post</button>
+        </form>
+    </div>
+</body>
+
+</html>

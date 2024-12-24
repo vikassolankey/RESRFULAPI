@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insta Posts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Insta Posts</h1>
+    <div class="posts-container">
+        <% for (let post of posts) { %>
+            <div class="post-card">
+                <h3 class="post-username">@<%= post.username %></h3>
+                <p class="post-content"><%= post.content %></p>
+                <div class="post-buttons">
+                    <a href="http://localhost:8085/posts/<%= post.id %>" class="button details-button">See Details</a>
+                    <a href="http://localhost:8085/posts/<%= post.id %>/edit" class="button edit-button">Edit</a>
+                    <form method="post" action="/posts/<%= post.id %>/delete?_method=DELETE" class="delete-form">
+                        <button type="submit" class="button delete-button">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    <br><br>
+    <a href="http://localhost:8085/posts/new" class="button create-button">Create New Post</a>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <Style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .form-title {
+            font-size: 28px;
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        .post-form {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .form-label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #4a90e2;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            font-size: 14px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 4px #4a90e2;
+        }
+
+        .submit-button {
+            background-color: #4a90e2;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #357ab8;
+        }
+    </Style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Create New Post</h1>
+        <form method="post" action="/posts" class="post-form">
+            <label for="username" class="form-label">Your Name</label>
+            <input type="text" name="username" id="username" class="form-input" placeholder="Enter your name" required>
+
+            <label for="content" class="form-label">Post Content</label>
+            <textarea name="content" id="content" class="form-textarea" placeholder="Enter your post"
+                required></textarea>
+
+            <button type="submit" class="submit-button">Submit Post</button>
+        </form>
+    </div>
+</body>
+
+</html>
